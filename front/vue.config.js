@@ -1,15 +1,16 @@
 module.exports = {
-    // 选项...
-    // 配置项 请参考 https://cli.vuejs.org/zh/config/#css-loaderoptions
-    devServer: {
-        proxy: {
-          '/api': {
-            target: '<url>', // 域名
-            changeOrigin: true
-          },
-          '/foo': {
-            target: '<other_url>'
-          }
-        }
+  //  eslint-loader 是否启用
+  lintOnSave: false,
+  // 选项...
+  devServer: {
+    proxy: {
+      '/api': {
+        target: '<url>',
+      },
+      '/foo': {
+        target: '<other_url>'
       }
+    }
+  },
+  publicPath: process.env.NODE_ENV === 'production' ? '/production/' : '/'
 }

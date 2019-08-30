@@ -1,21 +1,22 @@
 import Vue from 'vue'
 import App from './App.vue'
-import router from '@/router'
-import url from '@/modules/url.js'
-import axios from 'axios' 
+import router from './router/index'
+import store from './store/index'
+import baseUrl from '@/api/baseUrl'
+import {getRequest} from '@/utils/http'
+import {postRequest} from '@/utils/http'
+import {deleteRequest} from '@/utils/http'
 
-// 将请求地址挂载到vue上
-Vue.prototype.$url = url 
-
-/**
- *  将axios挂载到vue上  Axios 是一个基于 promise 的 HTTP 库，可以用在浏览器和 node.js 中。 
- *  参考文档 http://www.axios-js.com/zh-cn/docs/
- */
-Vue.prototype.$http = axios 
+// vue挂载
+Vue.prototype.$BASE_URL = baseUrl
+Vue.prototype.getRequest = getRequest;
+Vue.prototype.postRequest = postRequest;
+Vue.prototype.deleteRequest = deleteRequest;
 
 Vue.config.productionTip = false
 
 new Vue({
-    router,
-    render: h => h(App),
+  router,
+  store,
+  render: h => h(App)
 }).$mount('#app')

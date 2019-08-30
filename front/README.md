@@ -1,4 +1,6 @@
-# html
+# vue-demo
+
+## vue项目基础框架 使用 vue-cli+router+axios+vuex
 
 ## Project setup
 ```
@@ -25,16 +27,11 @@ npm run test
 npm run lint
 ```
 
+### Run your unit tests
+```
+npm run test:unit
+```
+
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
-### 页面路径为 src/views
-
-### 前后台交互采用了axios
-
-### 页面引用vant组件方式
-```
-import Vue from 'vue'
-import { Button } from 'vant';
-Vue.use(Button)
-```
